@@ -7,7 +7,7 @@ Instagram Ct Junior.
 - [X] Deve ser possível fazer login;
 - [X] Deve ser possível criar um novo usuário;
 - [ ] Deve ser possível retornar posts;
-- [ ] Deve ser possível editar o próprio perfil;
+- [x] Deve ser possível editar o próprio perfil;
 - [ ] Deve ser possível editar o próprio post;
 - [ ] Deve ser possível deletar o próprio post;
 - [ ] Deve ser possível criar o próprio post;
