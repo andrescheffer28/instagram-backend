@@ -1,7 +1,7 @@
 //import { FastifyRequest, FastifyReply } from "fastify"
-import { prisma } from "../../instagram-backend/src/lib/prisma"
 import { compare, hash } from "bcryptjs"
 import { InvalidCredentialError } from "./errors/invalid-credentials-error"
+import { prisma } from "../lib/prisma"
 
 interface AuthenticateUseCaseRequest{
     username: string
