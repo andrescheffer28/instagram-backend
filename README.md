@@ -6,10 +6,10 @@ Instagram Ct Junior.
 
 - [X] Deve ser possível fazer login;
 - [X] Deve ser possível criar um novo usuário;
-- [ ] Deve ser possível retornar posts;
+- [x] Deve ser possível retornar posts;
 - [x] Deve ser possível editar o próprio perfil;
 - [X] Deve ser possível editar o próprio post;
-- [ ] Deve ser possível deletar o próprio post;
+- [X] Deve ser possível deletar o próprio post;
 - [X] Deve ser possível criar o próprio post;
 - [ ] Deve ser possível retornar os próprios posts;
 
@@ -25,6 +25,8 @@ Instagram Ct Junior.
 ## RNFs (Requisitos não-funcionais)
 
 - [X] O usuário deve ser identificado por um JWT (JSON Web Token);
+- [ ] o token deve expirar em 2 horas
 - [X] A senha do usuário deve ser encriptografada usando o bcrypt
-- [ ] O Post mais recente deve estar na posição 0
+- [x] O Post mais recente deve estar na posição 0
+- [ ] O usuário deve ser capaz de adicionar sua foto de perfil durante a criação do perfil
  
