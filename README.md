@@ -4,7 +4,7 @@ Instagram Ct Junior.
 
 ## RFs (Requisitos funcionais)
 
-- [ ] Deve ser possível fazer login;
+- [X] Deve ser possível fazer login;
 - [X] Deve ser possível criar um novo usuário;
 - [ ] Deve ser possível retornar posts;
 - [ ] Deve ser possível editar o próprio perfil;
@@ -24,7 +24,7 @@ Instagram Ct Junior.
 
 ## RNFs (Requisitos não-funcionais)
 
-- [ ] O usuário deve ser identificado por um JWT (JSON Web Token);
+- [X] O usuário deve ser identificado por um JWT (JSON Web Token);
 - [X] A senha do usuário deve ser encriptografada usando o bcrypt
 - [ ] O Post mais recente deve estar na posição 0
  
