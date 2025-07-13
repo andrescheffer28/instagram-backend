@@ -10,7 +10,7 @@ Instagram Ct Junior.
 - [x] Deve ser possível editar o próprio perfil;
 - [ ] Deve ser possível editar o próprio post;
 - [ ] Deve ser possível deletar o próprio post;
-- [ ] Deve ser possível criar o próprio post;
+- [X] Deve ser possível criar o próprio post;
 - [ ] Deve ser possível retornar os próprios posts;
 
 ## RNs (Regras de negócio)
@@ -20,7 +20,7 @@ Instagram Ct Junior.
 
 - [ ] O usuário não deve poder retornar posts com um token inválido;
 
-- [ ] O usuário não deve poder trocar a foto de perfil de outro usuário;
+- [X] O usuário não deve poder trocar a foto de perfil de outro usuário;
 
 ## RNFs (Requisitos não-funcionais)
 
