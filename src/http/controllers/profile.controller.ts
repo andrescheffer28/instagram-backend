@@ -29,9 +29,7 @@ export async function profile(request: FastifyRequest, reply: FastifyReply) {
     return reply.status(204).send();
 
   } catch (err) {
-    // Se o JWT for inválido, o request.jwtVerify() já retorna 401.
-    // O Zod retorna um erro 400 se a validação falhar, que será tratado pelo nosso app.setErrorHandler.
-    // Aqui, reenviamos qualquer outro erro que possa ocorrer.
+
     throw err;
   }
 }

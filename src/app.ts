@@ -3,6 +3,7 @@ import { appRoutes } from './http/routes'
 import { ZodError } from 'zod'
 import { env } from './env'
 import fastifyJwt from '@fastify/jwt'
+import { InvalidCredentialError } from './use-cases/errors/invalid-credentials-error'
 
 export const app = fastify()
 
@@ -17,6 +18,10 @@ app.setErrorHandler((error, _, reply) => {
         return reply  
             .status(400)
             .send( {message: 'Validation err', issues: error.format()} )
+    }
+
+    if (error.statusCode) {
+        return reply.status(error.statusCode).send()
     }
 
     if (env.NODE_ENV !== 'production'){
