@@ -11,5 +11,5 @@ export async function appRoutes(app: FastifyInstance) {
     app.patch('/user', profile)
 
     app.post('/post', criarPost)
-    app.patch('/post:id', editarPost)
+    app.patch('/post/:postId', editarPost)
 }
