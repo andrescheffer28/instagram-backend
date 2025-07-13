@@ -5,15 +5,13 @@ import { InvalidCredentialError } from "../../use-cases/errors/invalid-credentia
 
 export async function authenticate(request: FastifyRequest, reply: FastifyReply){
   const registerBodySchema = z.object({
-    username: z.string(),
     email: z.string().email(),
     senha: z.string().min(6),
   })
-  const { username, email, senha } = registerBodySchema.parse(request.body)
+  const { email, senha } = registerBodySchema.parse(request.body)
 
   try{
     const { user } = await authenticateUseCase({
-        username,
         email,
         senha
     })

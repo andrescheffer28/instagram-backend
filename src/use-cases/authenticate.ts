@@ -4,7 +4,6 @@ import { InvalidCredentialError } from "./errors/invalid-credentials-error"
 import { prisma } from "../lib/prisma"
 
 interface AuthenticateUseCaseRequest{
-    username: string
     email: string
     senha: string
 }
