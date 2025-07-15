@@ -13,17 +13,18 @@ export async function registerUseCase({
     email, 
     senha
 }: RegisterUseCaseRequest){
-    const senha_hash = await hash(senha, 6)
     
     const userWithSameData = await prisma.user.findFirst({
-    where: {
-      OR: [{ email: email }, { username: username }],
-    },
-  });
+      where: {
+        OR: [{ email: email }, { username: username }],
+      },
+    });
 
     if(userWithSameData){
     throw new UserAlreadyExistsError()
     }
+
+    const senha_hash = await hash(senha, 6)
 
     await prisma.user.create({
     data: {
