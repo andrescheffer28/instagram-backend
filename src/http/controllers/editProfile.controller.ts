@@ -12,16 +12,16 @@ export async function editProfile(
   await request.jwtVerify();
 
   const editProfileBodySchema = z.object({
-    fotoDePerfil: z.string().url()
+    user_photo: z.string().url()
   })
 
   try {
-    const { fotoDePerfil } = editProfileBodySchema.parse(request.body)
+    const { user_photo } = editProfileBodySchema.parse(request.body)
     const userId = request.user.sub
 
     await editProfileUseCase({
       id: userId,
-      fotoDePerfil: fotoDePerfil
+      fotoDePerfil: user_photo
     })
 
     return reply.status(200).send()

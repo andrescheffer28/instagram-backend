@@ -3,8 +3,7 @@ import { NotAuthorizedError } from "./errors/not-authorized-error"
 
 interface EditProfileUseCaseRequest {
   id: string
-  fotoDePerfil
-: string
+  fotoDePerfil: string
 }
 
 export async function editProfileUseCase({
