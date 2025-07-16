@@ -1,8 +1,8 @@
-import { FastifyReply, FastifyRequest } from "fastify";
-import { z } from "zod";
-import { PostNotFoundError } from "../../use-cases/errors/post-not-found-error";
-import { NotAuthorizedError } from "../../use-cases/errors/not-authorized-error";
-import { editPostUseCase } from "../../use-cases/edit-post";
+import { FastifyReply, FastifyRequest } from "fastify"
+import { z } from "zod"
+import { PostNotFoundError } from "../../use-cases/errors/post-not-found-error"
+import { NotAuthorizedError } from "../../use-cases/errors/not-authorized-error"
+import { editPostUseCase } from "../../use-cases/edit-post"
 
 export async function editPost(
   request: FastifyRequest,
@@ -13,20 +13,24 @@ export async function editPost(
 
   const editPostParamsSchema = z.object({
     id: z.string().uuid(),
+  })
+
+  const editPostBodySchema = z.object({
     descricao: z.string()
-  });
+  })
 
   try {
-    const { id, descricao } = editPostParamsSchema.parse(request.params);
-    const userId = request.user.sub; 
+    const { id } = editPostParamsSchema.parse(request.params)
+    const { descricao } = editPostBodySchema.parse(request.body)
+    const userId = request.user.sub
 
     await editPostUseCase({
       postId: id,
       userId: userId,
       descricao: descricao
-    });
+    })
 
-    return reply.status(200).send();
+    return reply.status(200).send()
   } catch (err) {
 
     if (err instanceof PostNotFoundError) {
