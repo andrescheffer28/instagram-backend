@@ -1,15 +1,16 @@
 import { prisma } from "../lib/prisma"
 import { NotAuthorizedError } from "./errors/not-authorized-error"
 
-interface EditPostUseCaseRequest {
+interface EditProfileUseCaseRequest {
   id: string
-  fotoLink: string
+  fotoDePerfil
+: string
 }
 
 export async function editProfileUseCase({
   id,
-  fotoLink
-}: EditPostUseCaseRequest) {
+  fotoDePerfil
+}: EditProfileUseCaseRequest) {
 
   const user = await prisma.user.findUnique({
     where: {
@@ -21,12 +22,12 @@ export async function editProfileUseCase({
     throw new NotAuthorizedError();
   }
 
-  await prisma.post.update({
+  await prisma.user.update({
     where: {
       id,
     },
     data:{
-      fotoLink
+      fotoDePerfil
     }
   })
 }

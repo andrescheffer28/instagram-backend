@@ -21,7 +21,7 @@ export async function editProfile(
 
     await editProfileUseCase({
       id: userId,
-      fotoLink: fotoDePerfil
+      fotoDePerfil: fotoDePerfil
     })
 
     return reply.status(200).send()
