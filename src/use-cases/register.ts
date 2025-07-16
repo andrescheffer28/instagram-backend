@@ -7,12 +7,14 @@ interface RegisterUseCaseRequest{
     username: string
     email: string
     senha: string
+    user_photo?: string
 }
 
 export async function registerUseCase({
     username, 
     email, 
-    senha
+    senha,
+    user_photo
 }: RegisterUseCaseRequest){
     
     const userWithSameEmail = await prisma.user.findUnique({
@@ -41,7 +43,8 @@ export async function registerUseCase({
       data: {
           username,
           email,
-          senha_hash
+          senha_hash,
+          fotoDePerfil: user_photo
       },
     })
 }

@@ -1,7 +1,6 @@
 import { FastifyReply, FastifyRequest } from "fastify";
 import { z } from "zod";
 import { createPostUseCase } from "../../use-cases/create-post";
-import { InvalidCredentialError } from "../../use-cases/errors/invalid-credentials-error";
 
 export async function createPost(request: FastifyRequest, reply: FastifyReply) {
 
@@ -22,7 +21,7 @@ export async function createPost(request: FastifyRequest, reply: FastifyReply) {
     descricao,
     userId,
   })} catch (err) {
-    
+
     throw err;
   }
 
