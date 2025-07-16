@@ -1,4 +1,3 @@
-//import { FastifyRequest, FastifyReply } from "fastify"
 import { compare } from "bcryptjs"
 import { InvalidCredentialError } from "./errors/invalid-credentials-error"
 import { prisma } from "../lib/prisma"
