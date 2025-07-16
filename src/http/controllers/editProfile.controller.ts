@@ -4,7 +4,7 @@ import { NotAuthorizedError } from "../../use-cases/errors/not-authorized-error"
 import { UserNotFoundError } from "../../use-cases/errors/user-not-found-error";
 import { editProfileUseCase } from "../../use-cases/edit-profile";
 
-export async function editPost(
+export async function editProfile(
   request: FastifyRequest,
   reply: FastifyReply
 ) {
