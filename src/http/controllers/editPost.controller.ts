@@ -12,7 +12,7 @@ export async function editPost(
   await request.jwtVerify();
 
   const editPostParamsSchema = z.object({
-    id: z.string().uuid(),
+    postId: z.string().uuid(),
   })
 
   const editPostBodySchema = z.object({
@@ -20,12 +20,12 @@ export async function editPost(
   })
 
   try {
-    const { id } = editPostParamsSchema.parse(request.params)
+    const { postId } = editPostParamsSchema.parse(request.params)
     const { descricao } = editPostBodySchema.parse(request.body)
     const userId = request.user.sub
 
     await editPostUseCase({
-      postId: id,
+      postId: postId,
       userId: userId,
       descricao: descricao
     })

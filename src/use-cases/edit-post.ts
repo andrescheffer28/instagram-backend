@@ -18,7 +18,7 @@ export async function editPostUseCase({
     where: {
       id: postId,
     },
-  });
+  })
 
   if (!post) {
     throw new PostNotFoundError();
